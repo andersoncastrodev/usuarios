@@ -38,4 +38,10 @@ public class UsuarioService {
 		
 		return usuarioRepository.save(newObj);
 	}
+
+
+	public Usuario create(Usuario obj) {
+		obj.setId(null); //Para Evitar Sobrescrever o dado já Existente.		
+		return usuarioRepository.save(obj);
+	}
 }
