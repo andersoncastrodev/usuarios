@@ -28,4 +28,14 @@ public class UsuarioService {
 	public List<Usuario> findAll() {
 		return usuarioRepository.findAll();
 	}
+
+	public Usuario update(Integer id, Usuario obj) {
+		Usuario newObj = findById(id);
+		
+		newObj.setNome(obj.getNome());
+		newObj.setLogin(obj.getLogin());
+		newObj.setSenha(obj.getSenha());
+		
+		return usuarioRepository.save(newObj);
+	}
 }
