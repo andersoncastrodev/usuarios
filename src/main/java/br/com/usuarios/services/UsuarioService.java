@@ -44,4 +44,9 @@ public class UsuarioService {
 		obj.setId(null); //Para Evitar Sobrescrever o dado já Existente.		
 		return usuarioRepository.save(obj);
 	}
+
+	public void delete(Integer id) {
+		findById(id); //buscando o objeto Usuario
+		usuarioRepository.deleteById(id);
+	}
 }
