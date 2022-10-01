@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.usuarios.domain.Usuario;
+import br.com.usuarios.exceptions.ObjectNotFoundException;
 import br.com.usuarios.repository.UsuarioRepository;
 
 @Service
@@ -19,6 +20,6 @@ public class UsuarioService {
 		
 		Optional<Usuario> obj = usuarioRepository.findById(id);
 		
-		return obj.orElse(null);
+		return obj.orElseThrow(()-> new ObjectNotFoundException("Objeto Não Encontrado! Id:"+id+",Tipo "+Usuario.class.getName()));
 	}
 }
