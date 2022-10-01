@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 public class Usuario implements Serializable {
 
@@ -18,12 +20,15 @@ public class Usuario implements Serializable {
 	private Integer id;
 	
 	@NotEmpty(message = "Campo Nome em Branco")
+	@Length(min = 3, max = 100, message = "O nome dever ter entre 3 a 10 caracteres")
 	private String nome;
 	
 	@NotEmpty(message = "Campo Login em Branco")
+	@Length(min = 5, max = 15, message = "O login dever ter entre 5 a 15 caracteres")
 	private String login;
 	
 	@NotEmpty(message = "Campo Senha em Branco")
+	@Length(min = 5, max = 15, message = "O Senha dever ter entre 5 a 15 caracteres")
 	private String senha;
 
 	
