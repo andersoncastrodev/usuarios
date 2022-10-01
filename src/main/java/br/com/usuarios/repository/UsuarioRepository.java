@@ -8,5 +8,4 @@ import br.com.usuarios.domain.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-	
 }

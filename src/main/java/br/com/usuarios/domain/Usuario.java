@@ -20,15 +20,15 @@ public class Usuario implements Serializable {
 	private Integer id;
 	
 	@NotEmpty(message = "Campo Nome em Branco")
-	@Length(min = 3, max = 100, message = "O nome dever ter entre 3 a 10 caracteres")
+	@Length(min = 2, max = 100, message = "O nome dever ter entre 2 a 10 caracteres")
 	private String nome;
 	
 	@NotEmpty(message = "Campo Login em Branco")
-	@Length(min = 5, max = 15, message = "O login dever ter entre 5 a 15 caracteres")
+	@Length(min = 2, max = 15, message = "O login dever ter entre 2 a 15 caracteres")
 	private String login;
 	
 	@NotEmpty(message = "Campo Senha em Branco")
-	@Length(min = 5, max = 15, message = "O Senha dever ter entre 5 a 15 caracteres")
+	@Length(min = 2, max = 15, message = "O Senha dever ter entre 2 a 15 caracteres")
 	private String senha;
 
 	
@@ -106,10 +106,4 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", login=" + login + ", senha=" + senha + "]";
-	}
-
 }
